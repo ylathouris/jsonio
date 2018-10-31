@@ -1,0 +1,10 @@
+{
+  "timestamp": {
+    "data": "2014-03-12T06:55:43.713378",
+    "type": "datetime"
+  },
+  "datestamp": {
+    "data": "1984-02-08",
+    "type": "date"
+  }
+}
