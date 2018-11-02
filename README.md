@@ -7,14 +7,14 @@
 The `jsonlib` package provides utility functions for reading and writing JSON data. It supports the following features:
 
 * [Easy Read/Write](#readwrite)
-* [Supports `json` Library](#json)
+* [Functions Like The `json` Library](#json)
 * [Supports `datetime/date` Objects](#datetime)
 * [Supports `dataclasses` (Python 3.7+)](#dataclass)
 * [Supports `OrderedDict` Objects](#ordereddict)
 
 </br>
 
-## <a name="readwrite"></a>Easy Read/Write
+### <a name="readwrite"></a>Easy Read/Write
 
 **Read**
 
@@ -35,7 +35,7 @@ jsonlib.write({'foo': 'bar'}, '/foo/bar.json')
 </br>
 
 
-## <a name="json"></a>Supports `json` Library
+### <a name="json"></a>Supports `json` Library
 
 **Load**
 
@@ -80,7 +80,7 @@ text = jsonlib.dumps(data, jsonfile, indent=2, sort_keys=True)
 </br>
 
 
-## <a name="datetime"></a>Supports `date/datetime` Objects
+### <a name="datetime"></a>Supports `date/datetime` Objects
 
 
 ```python
@@ -100,7 +100,7 @@ assert before == after  # True
 </br>
 
 
-## <a name="dataclasses"></a>Supports `dataclasses` (Python 3.7+)
+### <a name="dataclasses"></a>Supports `dataclasses` (Python 3.7+)
 
 ```python
 from dataclasses import dataclass
@@ -123,7 +123,7 @@ assert before == after  # True
 </br>
 
 
-## <a name="ordereddict"></a>Supports `OrderedDict` Objects
+### <a name="ordereddict"></a>Supports `OrderedDict` Objects
 
 ```python
 import collections
