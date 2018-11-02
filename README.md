@@ -35,7 +35,7 @@ jsonlib.write({'foo': 'bar'}, '/foo/bar.json')
 </br>
 
 
-### <a name="json"></a>Supports `json` Library
+### <a name="json"></a>Functions Like The `json` Library
 
 **Load**
 
