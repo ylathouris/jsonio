@@ -7,7 +7,7 @@
 The `jsonlib` package provides utility functions for reading and writing JSON data. It supports the following features:
 
 * [Easy Read/Write](#readwrite)
-* [Functions Like The `json` Library](#json)
+* [Works Just Like The `json` Library](#json)
 * [Supports `datetime/date` Objects](#datetime)
 * [Supports `dataclasses` (Python 3.7+)](#dataclass)
 * [Supports `OrderedDict` Objects](#ordereddict)
@@ -35,7 +35,7 @@ jsonlib.write({'foo': 'bar'}, '/foo/bar.json')
 </br>
 
 
-### <a name="json"></a>Functions Like The `json` Library
+### <a name="json"></a>Works Just Like The `json` Library
 
 **Load**
 
