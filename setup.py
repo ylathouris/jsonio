@@ -8,7 +8,7 @@ root = os.path.dirname(__file__)
 src = os.path.relpath(os.path.join(root, 'python'))
 
 setup(
-    name='jsonio',
+    name='jsonlib',
     version='0.1.0',
     description='JSON IO Utilities',
     package_dir={'': src},

@@ -2,14 +2,9 @@
 """JSON Helpers"""
 
 import collections
-import datetime
-import dateutil.parser
 import json
 
-try:
-    import dataclasses
-except ImportError:
-    dataclasses = None
+from .handlers import get_handlers, get_handler
 
 
 __all__ = [
@@ -34,10 +29,14 @@ def encode(obj):
     Returns:
         object: JSON serializable object.
     """
-    if isinstance(obj, (datetime.datetime, datetime.date)):
-        return {'datatype': type(obj).__name__, 'data': obj.isoformat()}
-    elif dataclasses and dataclasses.is_dataclass(obj):
-        return {'datatype': 'dataclass', 'data': obj.__dict__}
+    handlers = get_handlers()
+    for handler in handlers:
+        if handler.active:
+            if handler.match(obj):
+                return {
+                    '$jsonlib-handler': handler.name,
+                    '$jsonlib-data': handler.encode(obj)
+                }
 
     return obj
 
@@ -52,15 +51,11 @@ def decode(obj):
     Returns:
         object: Deserialized object.
     """
-    if 'datatype' in obj and 'data' in obj:
-        if obj['datatype'] == 'datetime':
-            return dateutil.parser.parse(obj['data'])
-        elif obj['datatype'] == 'date':
-            return dateutil.parser.parse(obj['data']).date()
-        elif obj['datatype'] == 'dataclass':
-            data = obj['data']
-            objtype = dataclasses.make_dataclass('Dataclass', data.keys())
-            obj = objtype(**data)
+    if '$jsonlib-data' in  obj:
+        name = obj.get('$jsonlib-handler')
+        handler = get_handler(name)
+        if handler:
+            return handler.decode(obj['$jsonlib-data'])
 
     return obj
 

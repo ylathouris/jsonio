@@ -2,9 +2,9 @@
 
 ---
 
-# jsonio
+# jsonlib
 
-The `jsonio` package provides utility functions for reading and writing JSON data. It supports the following features:
+The `jsonlib` package provides utility functions for reading and writing JSON data. It supports the following features:
 
 * [Easy Read/Write](#readwrite)
 * [Supports `json` Library](#json)
@@ -19,17 +19,17 @@ The `jsonio` package provides utility functions for reading and writing JSON dat
 **Read**
 
 ```python
-import jsonio
+import jsonlib
 
-data = jsonio.read('/foo/bar.json')
+data = jsonlib.read('/foo/bar.json')
 ```
 
 **Write**
 
 ```python
-import jsonio
+import jsonlib
 
-jsonio.write({'foo': 'bar'}, '/foo/bar.json')
+jsonlib.write({'foo': 'bar'}, '/foo/bar.json')
 ```
 
 </br>
@@ -40,33 +40,33 @@ jsonio.write({'foo': 'bar'}, '/foo/bar.json')
 **Load**
 
 ```python
-import jsonio
+import jsonlib
 
 with open('/foo/bar.json', 'r') as jsonfile:
-    data = jsonio.load(jsonfile)
+    data = jsonlib.load(jsonfile)
 ```
 
 **Loads**
 
 ```python
-import jsonio
+import jsonlib
 
-data = jsonio.loads('{"foo": "bar"}')
+data = jsonlib.loads('{"foo": "bar"}')
 ```
 
 **Dump**
 
 ```python
-import jsonio
+import jsonlib
 
 with open('/foo/bar.json', 'w') as jsonfile:
-    jsonio.dump({'foo': 'bar'}, jsonfile)
+    jsonlib.dump({'foo': 'bar'}, jsonfile)
 ```
 
 **Dumps**
 
 ```python
-import jsonio
+import jsonlib
 
 data = {
     'apple': 'crumble',
@@ -74,7 +74,7 @@ data = {
 }
 
 # Use standard options.
-text = jsonio.dumps(data, jsonfile, indent=2, sort_keys=True)
+text = jsonlib.dumps(data, jsonfile, indent=2, sort_keys=True)
 ```
 
 </br>
@@ -85,15 +85,15 @@ text = jsonio.dumps(data, jsonfile, indent=2, sort_keys=True)
 
 ```python
 import datetime
-import jsonio
+import jsonlib
 
 before = {
     'date': datetime.date.today(),
     'timestamp': datetime.datetime.now(),
 }
 
-jsonio.write(before, '/foo/bar.json')
-after = jsonio.read('/foo/bar.json')
+jsonlib.write(before, '/foo/bar.json')
+after = jsonlib.read('/foo/bar.json')
 assert before == after  # True
 ```
 
@@ -104,7 +104,7 @@ assert before == after  # True
 
 ```python
 from dataclasses import dataclass
-import jsonio
+import jsonlib
 
 
 @dataclass
@@ -115,8 +115,8 @@ class Fruit:
 
 before = Fruit(apple='Fuji', banana='Lady Finger')
 
-jsonio.write(before, '/foo/bar.json')
-after = jsonio.read('/foo/bar.json')
+jsonlib.write(before, '/foo/bar.json')
+after = jsonlib.read('/foo/bar.json')
 assert before == after  # True
 ```
 
@@ -127,11 +127,11 @@ assert before == after  # True
 
 ```python
 import collections
-import jsonio
+import jsonlib
 
 before = collections.OrderedDict([('banana', 'split'), ('apple', 'crumble')])
 
-text = jsonio.dumps(before, indent=2)
-after = jsonio.loads(text, ordered=True)
+text = jsonlib.dumps(before, indent=2)
+after = jsonlib.loads(text, ordered=True)
 assert before == after  # True
 ```

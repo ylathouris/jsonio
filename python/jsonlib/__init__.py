@@ -1,5 +1,11 @@
-from . import io
-from .io import (
+
+from . import handlers
+from .handlers import (
+    Handler,
+    get_handlers,
+    get_handler,
+)
+from .main import (
     encode,
     decode,
     load,
@@ -12,7 +18,6 @@ from .io import (
 
 
 __all__ = [
-    'io',
     'encode',
     'decode',
     'load',
@@ -21,4 +26,8 @@ __all__ = [
     'dumps',
     'read',
     'write',
+    'handlers',
+    'Handler',
+    'get_handlers',
+    'get_handler',
 ]

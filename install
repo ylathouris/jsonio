@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Create virtual env
+printf "\n> Creating virtual environment for installation...\n"
+rm -rf .venv
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Update pip
+printf "\n> Updating pip...\n"
+pip install --upgrade pip
+
+# Build source code.
+printf "\n> Installing source...\n"
+pip install .
+
+printf "\n> Done!"
