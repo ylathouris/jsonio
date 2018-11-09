@@ -1,4 +1,6 @@
-[![CircleCI](https://circleci.com/gh/ylathouris/jsonlib.svg?style=shield)](https://circleci.com/gh/ylathouris/jsonlib)! | [Coverage](coverage.svg)
+[![CircleCI](https://circleci.com/gh/ylathouris/jsonlib.svg?style=shield)](https://circleci.com/gh/ylathouris/jsonlib)!
+
+[Coverage](coverage.svg)
 
 ---
 
