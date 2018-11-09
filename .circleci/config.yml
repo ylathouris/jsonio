@@ -10,8 +10,8 @@ jobs:
       - checkout
 
       - run:
-        name: run tests
-        command: pip install tox && tox
+          name: run tests
+          command: pip install tox && tox
 
 workflows:
   version: 2
