@@ -6,7 +6,6 @@ This module contains the various built-in handlers. Such as:
 
     * date/datetime
     * dataclass
-    * namedtuple
 """
 
 import abc

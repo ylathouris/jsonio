@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  toxify:
+    docker:
+      - image: python:3.6
+
+    working_directory: ~/jsonlib
+
+    steps:
+      - checkout
+
+      - run:
+        name: run tests
+        command: pip install tox && tox
+
+workflows:
+  version: 2
+
+  jsonlib:
+    jobs:
+      - toxify
