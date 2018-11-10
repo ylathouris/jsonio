@@ -7,14 +7,15 @@ from setuptools import find_packages, setup
 root = os.path.dirname(__file__)
 src = os.path.relpath(os.path.join(root, 'python'))
 
+readme = os.path.join(root, 'README.md')
+with open(readme) as readme_file:
+    pypi_description = readme_file.read()
+
 setup(
     name='jsonlib',
     version='0.1.0',
     description='JSON Helpers',
-    long_description=(
-        "The `jsonlib` package provides utility functions for reading "
-        "and writing JSON data."
-    ),
+    long_description=pypi_description,
     long_description_content_type='text/markdown',
     url='https://github.com/ylathouris/jsonlib',
     author='Yani Lathouris',

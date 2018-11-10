@@ -15,6 +15,8 @@ The `jsonlib` package provides utility functions for reading and writing JSON da
 
 </br>
 
+
+
 ### <a name="readwrite"></a>Easy Read/Write
 
 **Read**
@@ -123,6 +125,14 @@ assert before == after  # True
 
 </br>
 
+## Installation
+
+```
+pip install jsonlib
+```
+
+
+</br>
 
 ### <a name="ordereddict"></a>Preserve Ordering - i.e. `OrderedDict` Objects
 
