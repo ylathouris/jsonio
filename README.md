@@ -1,11 +1,11 @@
 
-[![CircleCI](https://circleci.com/gh/ylathouris/jsonlib.svg?style=shield)](https://circleci.com/gh/ylathouris/jsonlib)  ![Coverage](coverage.svg)
+[![CircleCI](https://circleci.com/gh/ylathouris/jsonio.svg?style=shield)](https://circleci.com/gh/ylathouris/jsonio)  ![Coverage](coverage.svg)
 
 ---
 
-# jsonlib
+# jsonio
 
-The `jsonlib` package provides utility functions for reading and writing JSON data. It supports the following features:
+The `jsonio` package provides utility functions for reading and writing JSON data. It supports the following features:
 
 * [Easy Read/Write](#readwrite)
 * [Works Just Like The `json` Library](#json)
@@ -18,7 +18,7 @@ The `jsonlib` package provides utility functions for reading and writing JSON da
 ## Installation
 
 ```
-pip install jsonlib
+pip install jsonio
 ```
 
 </br>
@@ -28,17 +28,17 @@ pip install jsonlib
 **Read**
 
 ```python
-import jsonlib
+import jsonio
 
-data = jsonlib.read('/foo/bar.json')
+data = jsonio.read('/foo/bar.json')
 ```
 
 **Write**
 
 ```python
-import jsonlib
+import jsonio
 
-jsonlib.write({'foo': 'bar'}, '/foo/bar.json')
+jsonio.write({'foo': 'bar'}, '/foo/bar.json')
 ```
 
 </br>
@@ -49,33 +49,33 @@ jsonlib.write({'foo': 'bar'}, '/foo/bar.json')
 **Load**
 
 ```python
-import jsonlib
+import jsonio
 
 with open('/foo/bar.json', 'r') as jsonfile:
-    data = jsonlib.load(jsonfile)
+    data = jsonio.load(jsonfile)
 ```
 
 **Loads**
 
 ```python
-import jsonlib
+import jsonio
 
-data = jsonlib.loads('{"foo": "bar"}')
+data = jsonio.loads('{"foo": "bar"}')
 ```
 
 **Dump**
 
 ```python
-import jsonlib
+import jsonio
 
 with open('/foo/bar.json', 'w') as jsonfile:
-    jsonlib.dump({'foo': 'bar'}, jsonfile)
+    jsonio.dump({'foo': 'bar'}, jsonfile)
 ```
 
 **Dumps**
 
 ```python
-import jsonlib
+import jsonio
 
 data = {
     'apple': 'crumble',
@@ -83,7 +83,7 @@ data = {
 }
 
 # Use standard options.
-text = jsonlib.dumps(data, jsonfile, indent=2, sort_keys=True)
+text = jsonio.dumps(data, jsonfile, indent=2, sort_keys=True)
 ```
 
 </br>
@@ -94,15 +94,15 @@ text = jsonlib.dumps(data, jsonfile, indent=2, sort_keys=True)
 
 ```python
 import datetime
-import jsonlib
+import jsonio
 
 before = {
     'date': datetime.date.today(),
     'timestamp': datetime.datetime.now(),
 }
 
-jsonlib.write(before, '/foo/bar.json')
-after = jsonlib.read('/foo/bar.json')
+jsonio.write(before, '/foo/bar.json')
+after = jsonio.read('/foo/bar.json')
 assert before == after  # True
 ```
 
@@ -113,7 +113,7 @@ assert before == after  # True
 
 ```python
 from dataclasses import dataclass
-import jsonlib
+import jsonio
 
 
 @dataclass
@@ -124,8 +124,8 @@ class Fruit:
 
 before = Fruit(apple='Fuji', banana='Lady Finger')
 
-jsonlib.write(before, '/foo/bar.json')
-after = jsonlib.read('/foo/bar.json')
+jsonio.write(before, '/foo/bar.json')
+after = jsonio.read('/foo/bar.json')
 assert before == after  # True
 ```
 
@@ -135,11 +135,11 @@ assert before == after  # True
 
 ```python
 import collections
-import jsonlib
+import jsonio
 
 before = collections.OrderedDict([('banana', 'split'), ('apple', 'crumble')])
 
-text = jsonlib.dumps(before, indent=2)
-after = jsonlib.loads(text, ordered=True)
+text = jsonio.dumps(before, indent=2)
+after = jsonio.loads(text, ordered=True)
 assert before == after  # True
 ```
