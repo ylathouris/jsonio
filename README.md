@@ -15,7 +15,13 @@ The `jsonlib` package provides utility functions for reading and writing JSON da
 
 </br>
 
+## Installation
 
+```
+pip install jsonlib
+```
+
+</br>
 
 ### <a name="readwrite"></a>Easy Read/Write
 
@@ -122,15 +128,6 @@ jsonlib.write(before, '/foo/bar.json')
 after = jsonlib.read('/foo/bar.json')
 assert before == after  # True
 ```
-
-</br>
-
-## Installation
-
-```
-pip install jsonlib
-```
-
 
 </br>
 

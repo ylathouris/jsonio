@@ -13,7 +13,7 @@ with open(readme) as readme_file:
 
 setup(
     name='jsonlib',
-    version='0.1.0',
+    version='0.1.2',
     description='JSON Helpers',
     long_description=pypi_description,
     long_description_content_type='text/markdown',
