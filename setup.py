@@ -12,12 +12,12 @@ with open(readme) as readme_file:
     pypi_description = readme_file.read()
 
 setup(
-    name='jsonlib',
+    name='jsonio',
     version='0.1.2',
     description='JSON Helpers',
     long_description=pypi_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/ylathouris/jsonlib',
+    url='https://github.com/ylathouris/jsonio',
     author='Yani Lathouris',
     author_email='ylathouris@gmail.com',
     license='MIT',
@@ -34,12 +34,12 @@ setup(
         'Programming Language :: Python :: 3.7',
     ],
     python_requires='>=2.6, !=3.0.*, !=3.1.*, !=3.2.*, <4',
-    keywords='jsonlib, json, utils',
+    keywords='jsonio, json, utils',
     project_urls={
         #'Documentation': '',
         'Say Thanks!': 'http://saythanks.io/to/ylathouris',
-        'Source': 'https://github.com/ylathouris/jsonlib',
-        'Tracker': 'https://github.com/ylathouris/jsonlib/issues',
+        'Source': 'https://github.com/ylathouris/jsonio',
+        'Tracker': 'https://github.com/ylathouris/jsonio/issues',
     },
     package_dir={'': src},
     packages=find_packages(src),

@@ -1,6 +1,6 @@
 
 """
-JSONLIB Handlers
+JSON I/O Handlers
 
 This module contains the various built-in handlers. Such as:
 

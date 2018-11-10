@@ -34,8 +34,8 @@ def encode(obj):
         if handler.active:
             if handler.match(obj):
                 return {
-                    '$jsonlib-key': handler.name,
-                    '$jsonlib-value': handler.encode(obj)
+                    '$jsonio-key': handler.name,
+                    '$jsonio-value': handler.encode(obj)
                 }
 
     return obj
@@ -51,11 +51,11 @@ def decode(obj):
     Returns:
         object: Deserialized object.
     """
-    if '$jsonlib-value' in  obj:
-        name = obj.get('$jsonlib-key')
+    if '$jsonio-value' in  obj:
+        name = obj.get('$jsonio-key')
         handler = get_handler(name)
         if handler:
-            return handler.decode(obj['$jsonlib-value'])
+            return handler.decode(obj['$jsonio-value'])
 
     return obj
 

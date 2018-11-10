@@ -2,7 +2,7 @@
 FROM python:3.7
 
 # Set the working directory for the container
-WORKDIR /usr/local/jsonlib
+WORKDIR /usr/local/jsonio
 
 # Copy requirements.txt to the container
 ADD ./requirements.txt ./
