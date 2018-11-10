@@ -101,8 +101,8 @@ before = {
     'timestamp': datetime.datetime.now(),
 }
 
-jsonio.write(before, '/foo/bar.json')
-after = jsonio.read('/foo/bar.json')
+data = jsonio.dumps(before)
+after = jsonio.loads(data)
 assert before == after  # True
 ```
 
@@ -124,8 +124,8 @@ class Fruit:
 
 before = Fruit(apple='Fuji', banana='Lady Finger')
 
-jsonio.write(before, '/foo/bar.json')
-after = jsonio.read('/foo/bar.json')
+data = jsonio.dumps(before)
+after = jsonio.loads(data)
 assert before == after  # True
 ```
 

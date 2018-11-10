@@ -13,7 +13,7 @@ with open(readme) as readme_file:
 
 setup(
     name='jsonio',
-    version='0.1.3',
+    version='0.1.4',
     description='JSON Helpers',
     long_description=pypi_description,
     long_description_content_type='text/markdown',
