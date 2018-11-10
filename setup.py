@@ -18,6 +18,7 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/ylathouris/jsonlib',
     author='Yani Lathouris',
+    author_email='ylathouris@gmail.com',
     license='MIT',
     classifiers=[
         'Development Status :: 3 - Alpha',
