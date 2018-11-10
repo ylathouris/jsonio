@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: python:3.7
 
-    working_directory: ~/jsonlib
+    working_directory: ~/jsonio
 
     steps:
       - checkout
@@ -16,6 +16,6 @@ jobs:
 workflows:
   version: 2
 
-  jsonlib:
+  jsonio:
     jobs:
       - toxify
