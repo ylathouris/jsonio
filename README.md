@@ -11,7 +11,7 @@ The `jsonlib` package provides utility functions for reading and writing JSON da
 * [Works Just Like The `json` Library](#json)
 * [Supports `datetime/date` Objects](#datetime)
 * [Supports `dataclasses` (Python 3.7+)](#dataclass)
-* [Supports `OrderedDict` Objects](#ordereddict)
+* [Preserve Ordering](#ordereddict)
 
 </br>
 
@@ -124,7 +124,7 @@ assert before == after  # True
 </br>
 
 
-### <a name="ordereddict"></a>Supports `OrderedDict` Objects
+### <a name="ordereddict"></a>Preserve Ordering - i.e. `OrderedDict` Objects
 
 ```python
 import collections
