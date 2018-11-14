@@ -143,3 +143,5 @@ text = jsonio.dumps(before, indent=2)
 after = jsonio.loads(text, ordered=True)
 assert before == after  # True
 ```
+
+END
