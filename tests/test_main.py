@@ -1,4 +1,3 @@
-
 import collections
 import datetime
 import json
@@ -18,7 +17,7 @@ def test_read_json_file(json_path):
     """
     data = jsonio.read(json_path)
 
-    with open(json_path, 'r') as json_file:
+    with open(json_path, "r") as json_file:
         expected = json.load(json_file)
 
     assert data == expected
@@ -34,10 +33,10 @@ def test_load_json_file(json_path):
     Note:
         This method is similar to the `json.load` method.
     """
-    with open(json_path, 'r') as json_file:
+    with open(json_path, "r") as json_file:
         data = jsonio.load(json_file)
 
-    with open(json_path, 'r') as json_file:
+    with open(json_path, "r") as json_file:
         expected = json.load(json_file)
 
     assert data == expected
@@ -53,10 +52,10 @@ def test_load_json_data(json_path):
     Note:
         This method is similar to the `json.loads` method.
     """
-    with open(json_path, 'r') as json_file:
+    with open(json_path, "r") as json_file:
         contents = json_file.read()
 
-    with open(json_path, 'r') as json_file:
+    with open(json_path, "r") as json_file:
         expected = json.load(json_file)
 
     data = jsonio.loads(contents)
@@ -71,10 +70,10 @@ def test_write_json_file():
     out a JSON file.
     """
     root = tempfile.gettempdir()
-    path = os.path.join(root, 'jsonio-{}'.format(uuid.uuid4()))
+    path = os.path.join(root, "jsonio-{}".format(uuid.uuid4()))
     assert not os.path.isfile(path)
 
-    data = {'foo': 'bar'}
+    data = {"foo": "bar"}
     jsonio.write(data, path, indent=2)
     assert os.path.isfile(path)
 
@@ -92,11 +91,11 @@ def test_dump_json_file():
         This method is similar to the `json.dump` method.
     """
     root = tempfile.gettempdir()
-    path = os.path.join(root, 'jsonio-{}'.format(uuid.uuid4()))
+    path = os.path.join(root, "jsonio-{}".format(uuid.uuid4()))
     assert not os.path.isfile(path)
 
-    data = {'foo': 'bar'}
-    with open(path, 'w') as json_file:
+    data = {"foo": "bar"}
+    with open(path, "w") as json_file:
         jsonio.dump(data, json_file, indent=2)
         assert os.path.isfile(path)
 
@@ -113,6 +112,6 @@ def test_dump_json_to_string():
     Note:
         This method is similar to the `json.dumps` method.
     """
-    data = {'foo': 'bar'}
+    data = {"foo": "bar"}
     text = jsonio.dumps(data, indent=2)
     assert isinstance(text, str)

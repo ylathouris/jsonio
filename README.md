@@ -115,18 +115,18 @@ assert before == after  # True
 from dataclasses import dataclass
 import jsonio
 
+data = {
+  'foo': {
+    'bar': {
+      'baz': {
+        'qux': 'wibble'
+      }
+    }
+  }
+}
 
-@dataclass
-class Fruit:
-    apple: str
-    banana: str
-
-
-before = Fruit(apple='Fuji', banana='Lady Finger')
-
-data = jsonio.dumps(before)
-after = jsonio.loads(data)
-assert before == after  # True
+obj = jsonio.loads(data, dataclass=True)
+assert obj.foo.bar.baz.qux == 'wibble'  # True
 ```
 
 </br>
